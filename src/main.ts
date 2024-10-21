@@ -4,7 +4,14 @@ import App from './App.vue';
 
 import router from './routes/index.ts';
 import { createPinia } from 'pinia';
+import { OhVueIcon, addIcons } from 'oh-vue-icons';
+import { GiHotMeal } from 'oh-vue-icons/icons';
 
 const pinia = createPinia();
+addIcons(GiHotMeal);
 
-createApp(App).use(router).use(pinia).mount('#app');
+createApp(App)
+  .use(router)
+  .use(pinia)
+  .component('v-icon', OhVueIcon)
+  .mount('#app');
