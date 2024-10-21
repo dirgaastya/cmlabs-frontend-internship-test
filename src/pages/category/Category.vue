@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <router-view></router-view>
+  <h1 class="text-red-500">Helloo Ini</h1>
 </template>
