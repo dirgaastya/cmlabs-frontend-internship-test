@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Hero from '../../components/Category/Hero.vue';
+</script>
 
 <template>
-  <h1 class="text-red-500">Helloo Ini</h1>
+  <Hero />
 </template>
