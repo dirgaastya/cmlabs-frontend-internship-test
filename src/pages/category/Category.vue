@@ -13,5 +13,5 @@ onMounted(() => {
 
 <template>
   <Hero />
-  <List :data="categoryStore.categories" />
+  <List :data="categoryStore.categories" :loading="categoryStore.loading" />
 </template>

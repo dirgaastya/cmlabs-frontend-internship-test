@@ -6,6 +6,7 @@ export const useCategoryStore = defineStore('categories', {
   state: (): ICategoriesStore => ({
     categories: [],
     loading: false,
+    error: '',
   }),
   actions: {
     async fetchAllCategories(): Promise<void> {
@@ -16,8 +17,9 @@ export const useCategoryStore = defineStore('categories', {
         );
         this.categories = response.data.categories;
       } catch (error) {
-        console.error(error);
+        this.error = 'Error while fetching data';
       }
+      this.loading = false;
     },
   },
 });

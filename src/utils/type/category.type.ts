@@ -8,4 +8,5 @@ export interface ICategory {
 export interface ICategoriesStore {
   categories: ICategory[];
   loading: boolean;
+  error: string;
 }
