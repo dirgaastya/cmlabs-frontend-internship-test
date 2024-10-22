@@ -7,6 +7,7 @@ import MealHeader from '../../components/Meal/MealHeader.vue';
 import MealIngredients from '../../components/Meal/MealIngredients.vue';
 import MealInstructions from '../../components/Meal/MealInstructions.vue';
 import MealVideo from '../../components/Meal/MealVideo.vue';
+import Loading from '../../components/Loading.vue';
 
 const route = useRoute();
 const id = route.params.id as string;
@@ -18,14 +19,35 @@ onMounted(() => {
 </script>
 <template>
   <section class="py-8 space-y-8">
-    <div class="flex gap-x-12">
-      <MealImage :meal="categoryStore.meal" />
-      <div class="w-full space-y-8">
-        <MealHeader :meal="categoryStore.meal" />
-        <MealIngredients :meal="categoryStore.meal" />
-        <MealInstructions :meal="categoryStore.meal" />
-      </div>
+    <div
+      v-if="categoryStore.loading"
+      class="flex items-center justify-center w-full h-[80vh]"
+    >
+      <Loading />
     </div>
-    <MealVideo :meal="categoryStore.meal" />
+    <transition name="fade">
+      <div v-if="!categoryStore.loading" class="space-y-6">
+        <div class="flex gap-x-12">
+          <MealImage :meal="categoryStore.meal" />
+          <div class="w-full space-y-8">
+            <MealHeader :meal="categoryStore.meal" />
+            <MealIngredients :meal="categoryStore.meal" />
+            <MealInstructions :meal="categoryStore.meal" />
+          </div>
+        </div>
+        <MealVideo :meal="categoryStore.meal" />
+      </div>
+    </transition>
   </section>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
