@@ -5,7 +5,7 @@
     <div class="w-full h-full bg-black/60 py-12 px-16 text-white">
       <div class="w-1/2 space-y-12">
         <h2 class="text-3xl font-semibold">
-          Discover Delicious Recipes <span class="text-red-400">at</span> Your
+          Discover <span class="text-red-400">Delicious Recipes</span> at Your
           Fingertips!
         </h2>
         <div>
