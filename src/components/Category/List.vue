@@ -16,7 +16,7 @@ defineProps({
 </script>
 
 <template>
-  <section class="py-8">
+  <section class="py-4 md:py-8">
     <div class="w-fit mb-6 pb-2 pe-2 border-b-2 border-red-400">
       <h3 class="text-2xl text-gray-900 font-semibold tracking-tighter">
         What's Cooking?
@@ -26,7 +26,10 @@ defineProps({
       <Loading />
     </div>
     <transition name="fade">
-      <div v-if="!loading" class="grid grid-cols-4 gap-x-8 gap-y-6">
+      <div
+        v-if="!loading"
+        class="grid grid-cols-2 md:grid-cols-4 gap-x-4 md:gap-x-8 gap-y-3 md:gap-y-6"
+      >
         <CategoryCard
           v-for="(category, index) in data"
           :key="index"

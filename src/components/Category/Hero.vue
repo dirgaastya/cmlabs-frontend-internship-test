@@ -2,8 +2,10 @@
 
 <template>
   <div class="w-full h-80 bg-hero-image bg-cover rounded-lg overflow-hidden">
-    <div class="w-full h-full bg-black/60 py-12 px-16 text-white">
-      <div class="w-1/2 space-y-12">
+    <div
+      class="w-full h-full bg-black/60 py-6 px-4 lg:py-12 lg:px-16 text-white flex items-center justify-center lg:justify-start"
+    >
+      <div class="md:w-1/2 space-y-6 md:space-y-12 text-center lg:text-left">
         <h2 class="text-3xl font-semibold">
           Discover <span class="text-red-400">Delicious Recipes</span> at Your
           Fingertips!

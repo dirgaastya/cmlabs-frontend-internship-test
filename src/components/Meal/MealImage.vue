@@ -7,6 +7,6 @@ defineProps<{ meal: IMealDetail }>();
   <img
     :src="meal.strMealThumb"
     :alt="meal.strMeal"
-    class="w-1/3 object-center object-cover rounded-lg shadow"
+    class="md:w-1/3 object-center object-cover rounded-lg shadow"
   />
 </template>

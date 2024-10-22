@@ -4,7 +4,7 @@ import LogoApp from './LogoApp.vue';
 
 <template>
   <div
-    class="flex items-center justify-between py-3 border-t border-gray-100 mt-12"
+    class="flex flex-col md:flex-row items-center justify-between py-3 border-t border-gray-100 mt-12"
   >
     <LogoApp />
     <h3 class="text-sm font-light text-gray-500">

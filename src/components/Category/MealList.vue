@@ -33,7 +33,10 @@ defineProps({
       <Loading />
     </div>
     <transition name="fade">
-      <div v-if="!loading" class="grid grid-cols-4 gap-x-8 gap-y-6">
+      <div
+        v-if="!loading"
+        class="grid grid-cols-2 md:grid-cols-4 gap-x-4 md:gap-x-8 gap-y-3 md:gap-y-6"
+      >
         <MealCard
           v-for="(meal, index) in data"
           :key="index"

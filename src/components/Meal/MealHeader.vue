@@ -11,7 +11,7 @@ defineProps<{ meal: IMealDetail }>();
       </h3>
       <router-link
         :to="`/${meal.strCategory}`"
-        class="py-1 px-6 rounded-full bg-red-400 text-white"
+        class="py-1 px-3 md:px-6 rounded-full bg-red-400 text-xs md:text-sm text-white"
       >
         {{ meal.strCategory }}
       </router-link>

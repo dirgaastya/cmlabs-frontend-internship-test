@@ -27,7 +27,7 @@ onMounted(() => {
     </div>
     <transition name="fade">
       <div v-if="!categoryStore.loading" class="space-y-6">
-        <div class="flex gap-x-12">
+        <div class="flex flex-col gap-y-6 md:gap-y-0 md:flew-row md:gap-x-12">
           <MealImage :meal="categoryStore.meal" />
           <div class="w-full space-y-8">
             <MealHeader :meal="categoryStore.meal" />
