@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import { ICategory } from '../../utils/type/category.type';
+import { IMeals } from '../../utils/type/category.type';
 import Loading from '../Loading.vue';
-import CategoryCard from './Card.vue';
+import MealCard from './MealCard.vue';
 
 defineProps({
   data: {
-    type: Array as () => ICategory[],
+    type: Array as () => IMeals[],
     default: () => [],
+  },
+  category: {
+    type: String,
+    default: '',
   },
   loading: {
     type: Boolean,
@@ -16,21 +20,25 @@ defineProps({
 </script>
 
 <template>
-  <section class="py-8">
+  <section class="py-3">
     <div class="w-fit mb-6 pb-2 pe-2 border-b-2 border-red-400">
       <h3 class="text-2xl text-gray-900 font-semibold tracking-tighter">
-        What's Cooking?
+        {{ category }} <span class="text-red-400">Meals</span>.
       </h3>
+      <p class="font-light text-base text-gray-500">
+        Tasty {{ category }} Recipes for You
+      </p>
     </div>
     <div v-if="loading" class="flex items-center justify-center w-full h-80">
       <Loading />
     </div>
     <transition name="fade">
       <div v-if="!loading" class="grid grid-cols-4 gap-x-8 gap-y-6">
-        <CategoryCard
-          v-for="(category, index) in data"
+        <MealCard
+          v-for="(meal, index) in data"
           :key="index"
           :category="category"
+          :meal="meal"
         />
       </div>
     </transition>
